@@ -1,0 +1,94 @@
+:root{
+  --bg:#f5f7fb;
+  --card-bg:#ffffff;
+  --accent:#2b8aef;
+  --green:#2ecc71;
+  --red:#ff4d4f;
+  --width:340px;
+  --height:520px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter, system-ui, Arial, sans-serif;
+  background:var(--bg);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+main{
+  width:100%;
+  max-width:980px;
+  padding:28px;
+}
+
+header h1{margin:0 0 18px 0; font-size:22px; text-align:center}
+
+.role-wrap{background:var(--card-bg); padding:22px; border-radius:12px; text-align:center; box-shadow:0 8px 24px rgba(20,30,50,0.06)}
+.role-buttons{display:flex; gap:12px; justify-content:center; margin-top:14px}
+.role-buttons button{
+  padding:10px 14px; border-radius:10px; border:0; cursor:pointer; font-weight:600;
+  background:var(--accent); color:#fff;
+}
+.role-buttons button:nth-child(2){ background:#444; }
+
+.hidden{display:none}
+
+/* Card stack area */
+.card-container{
+  width:var(--width);
+  height:var(--height);
+  margin:26px auto;
+  position:relative;
+  touch-action:none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* card */
+.card{
+  position:absolute;
+  width:100%;
+  height:100%;
+  border-radius:14px;
+  background:var(--card-bg);
+  box-shadow:0 12px 30px rgba(20,30,50,0.12);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  transition:transform 220ms ease, opacity 220ms ease;
+  will-change:transform;
+  user-select:none;
+  cursor:grab;
+}
+
+.card:active{ cursor:grabbing; }
+
+.card img{
+  width:100%;
+  height:60%;
+  object-fit:cover;
+  display:block;
+}
+
+.card .info{
+  padding:14px;
+  flex:1;
+}
+
+.card .name { font-size:20px; margin:0 0 6px 0; font-weight:700 }
+.card .role { margin:0;color:#666; font-size:14px }
+
+/* controls */
+.controls{ display:flex; gap:18px; justify-content:center; margin-top:8px}
+.controls button{
+  padding:10px 16px; border-radius:10px; border:0; font-weight:700; cursor:pointer;
+}
+.controls .nope{ background:var(--red); color:white }
+.controls .like{ background:var(--green); color:white }
+
+/* empty */
+.empty{ text-align:center; margin-top:10px; }
+.empty p{ color:#333; margin-bottom:12px }
